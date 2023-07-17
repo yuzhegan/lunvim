@@ -57,10 +57,10 @@ return {
 			-- vim.api.nvim_set_keymap('n', '<leader>go', ':Copilot<CR>', { silent = true })
 			-- vim.api.nvim_set_keymap('n', '<leader>ge', ':Copilot enable<CR>', { silent = true })
 			-- vim.api.nvim_set_keymap('n', '<leader>gd', ':Copilot disable<CR>', { silent = true })
-			vim.api.nvim_set_keymap('i', '<c-i>', '<Plug>(copilot-suggest)', {})
-			vim.api.nvim_set_keymap('i', '<c-j>', '<Plug>(copilot-next)', { silent = true })
-			vim.api.nvim_set_keymap('i', '<c-k>', '<Plug>(copilot-previous)', { silent = true })
-			vim.cmd('imap <silent><script><expr> <C-C> copilot#Accept("")')
+			vim.api.nvim_set_keymap('i', '<c-o>', '<Plug>(copilot-suggest)', {})
+			vim.api.nvim_set_keymap('i', '<c-u>', '<Plug>(copilot-next)', { silent = true })
+			vim.api.nvim_set_keymap('i', '<c-e>', '<Plug>(copilot-previous)', { silent = true })
+			vim.cmd('imap <silent><script><expr> <C-Space> copilot#Accept("")')
 			vim.cmd([[
 			let g:copilot_filetypes = {
 	       \ 'TelescopePrompt': v:false,
