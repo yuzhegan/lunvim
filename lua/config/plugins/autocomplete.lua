@@ -99,6 +99,7 @@ M.configfunc = function()
 		window = {
 			completion = {
 				-- winhighlight = "Normal:Pmenu,FloatBorder:Pmenu,Search:None",
+				completeopt = "menu,menuone,noinsert",
 				col_offset = -3,
 				side_padding = 0,
 			},
@@ -121,19 +122,23 @@ M.configfunc = function()
 			end,
 		},
 		sources = cmp.config.sources({
-			{ name = "ultisnips" },
-			{ name = "nvim_lsp" },
-			{ name = "buffer" },
+			{ name = "ultisnips", priority = 999 },
+			{ name = "nvim_lsp",  priority = 1000 },
+			{ name = "nvim_lua",  priority = 1000 },
+			{ name = "path",      priority = 750 },
+			{ name = "buffer",    priority = 250 },
 		}, {
-			{ name = "path" },
-			{ name = "nvim_lua" },
+			-- { name = "path" },
+			-- { name = "nvim_lua" },
 			-- { name = "calc" },
 			-- { name = "luasnip" },
 			-- { name = 'tmux',    option = { all_panes = true, } },  -- this is kinda slow
 		}),
 		mapping = cmp.mapping.preset.insert({
-			['<C-o>'] = cmp.mapping.complete(),
-			["<c-i>"] = cmp.mapping(
+			['<CR>'] = cmp.config.disable,
+			['<S-Tab>'] = cmp.config.disable,
+			-- ['<Tab>'] = cmp.mapping.complete(),
+			["<c-o>"] = cmp.mapping(
 				function()
 					cmp_ultisnips_mappings.compose { "expand", "jump_forwards" } (function() end)
 				end,
@@ -152,16 +157,17 @@ M.configfunc = function()
 				end
 			}),
 			['<c-y>'] = cmp.mapping({ i = function(fallback) fallback() end }),
-			['<CR>'] = cmp.mapping({
-				i = function(fallback)
-					if cmp.visible() and cmp.get_active_entry() then
-						cmp.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = false })
-					else
-						fallback()
-					end
-				end
-			}),
-			["<Tab>"] = cmp.mapping({
+			-- ['<Tab>'] = cmp.mapping({
+			-- 	i = function(fallback)
+			-- 		if cmp.visible() and cmp.get_active_entry() then
+			-- 			cmp.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = false })
+			-- 		else
+			-- 			fallback()
+			-- 		end
+			-- 	end
+			-- }),
+
+			["<c-n>"] = cmp.mapping({
 				i = function(fallback)
 					if cmp.visible() then
 						cmp.select_next_item({ behavior = cmp.SelectBehavior.Insert })
@@ -172,7 +178,7 @@ M.configfunc = function()
 					end
 				end,
 			}),
-			["<S-Tab>"] = cmp.mapping({
+			["<c-p>"] = cmp.mapping({
 				i = function(fallback)
 					if cmp.visible() then
 						cmp.select_prev_item({ behavior = cmp.SelectBehavior.Insert })
@@ -181,6 +187,30 @@ M.configfunc = function()
 					end
 				end,
 			}),
+			["<Tab>"] = cmp.mapping(function(fallback)
+				-- idea输入方式
+				if cmp.visible() then
+					local entry = cmp.get_selected_entry()
+					if not entry then
+						cmp.select_next_item { behavior = cmp.SelectBehavior.Select }
+					else
+						if has_words_before() then
+							cmp.confirm {
+								behavior = cmp.ConfirmBehavior.Replace,
+								select = false,
+							}
+						else
+							cmp.confirm {
+								behavior = cmp.ConfirmBehavior.Insert,
+								select = false,
+							}
+						end
+					end
+				else
+					fallback()
+				end
+			end, { "i", "s" }),
+
 		}),
 	})
 end
