@@ -1,0 +1,3 @@
+return {
+	"gboncoffee/lf.vim",
+}
