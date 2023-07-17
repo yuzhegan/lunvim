@@ -32,6 +32,7 @@ vim.keymap.set("n", "<leader>pl", ":Lazy<CR>", { noremap = true })
 require("lazy").setup({
 	require("config.plugins.telescope").config,
 	require("config.plugins.tmux"),
+	require("config.plugins.magma"),
 	require("config.plugins.vimwiki"),
 	require("config.plugins.sessions"),
 	require("config.plugins.fcitx"),
