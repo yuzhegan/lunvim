@@ -12,7 +12,7 @@
 --
 return {
 	"dccsillag/magma-nvim",
-	-- branch = "origin/sync-with-goose-fork",
+	branch = "sync-with-goose-fork",
 	-- jupyter nvim
 	-- "yuzhegan/magma",
 	build = "UpdateRemotePlugins",

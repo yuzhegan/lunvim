@@ -10,7 +10,7 @@ vim.cmd([[ func SetPythonTitle()
 	"call append(line(".")+5, "import sys")
 	call append(line(".")+5, "import os")
 	" call append(line(".")+6, "os.chdir(os.path.abspath(os.path.dirname(__file__)))")
-	call append(line(".")+7, "#change cwd to current file dir")
+	" call append(line(".")+7, "#change cwd to current file dir")
  endfunc
 ]])
 
