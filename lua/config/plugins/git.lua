@@ -29,6 +29,20 @@ return {
 			vim.keymap.set("n", "<c-g>", ":LazyGit<CR>", { noremap = true, silent = true })
 		end
 	},
+	{
+		"wintermute-cell/gitignore.nvim",
+		keys = {
+			{
+				"<leader>gi",
+				function()
+					local gitignore = require("gitignore")
+					gitignore.generate("")
+				end,
+				desc = "generate GitIgnore file",
+			},
+		},
+
+	}
 	-- {
 	-- 	"APZelos/blamer.nvim",
 	-- 	config = function()
