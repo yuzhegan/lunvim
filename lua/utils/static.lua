@@ -62,9 +62,9 @@ M.langs = setmetatable({
 	python = {
 		ts = 'python',
 		ft = 'python',
-		lsp_server = 'pylsp',
+		lsp_server = 'pyright',
 		dap = 'debugpy',
-		formatting = 'pylsp',
+		formatting = 'flake8',
 	},
 	vim = {
 		ts = 'vim',

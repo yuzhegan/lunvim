@@ -8,8 +8,8 @@ return {
 			config = function()
 				vim.opt.rtp:append({ vim.fn.stdpath("data") .. "~/.local/share/nvim/lazy/vim-snippets" })
 				-- vim.g.UltiSnipsExpandTrigger = "<c-o>"
-				vim.g.UltiSnipsJumpForwardTrigger = "<c-j>"
-				vim.g.UltiSnipsJumpBackwardTrigger = "<c-k>"
+				vim.g.UltiSnipsJumpForwardTrigger = "<c-i>"
+				vim.g.UltiSnipsJumpBackwardTrigger = "<c-o>"
 				-- vim.g.UltiSnipsListSnippets = "<Plug>(utlisnips_list_snippets)"
 				-- vim.g.UltiSnipsRemoveSelectModeMappings = 0
 				vim.g.UltiSnipsListSnippets = "<c-x><c-x>"
