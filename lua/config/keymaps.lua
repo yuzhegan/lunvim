@@ -98,3 +98,4 @@ vim.keymap.set("n", "<leader>q", function()
 end, { noremap = true, silent = true })
 
 vim.cmd([[noremap <LEADER><LEADER> <Esc>/<++><CR>:nohlsearch<CR>"_c4l]])
+vim.keymap.set("n", "<LEADER>\\", ":g/^$/d<CR>", { noremap = true, silent = true })

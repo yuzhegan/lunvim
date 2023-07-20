@@ -10,9 +10,20 @@
 -- ]]
 --
 --
+vim.cmd([[
+function GetJupytextFold(linenum)
+    if getline(a:linenum) =~ "^#\\s%%"
+        " start fold
+        return ">1"
+    elseif getline(a:linenum + 1) =~ "^#\\s%%"
+        return "<1"
+    else
+        return "-1"
+    endif
+endfunction]])
 return {
-	"dccsillag/magma-nvim",
-	branch = "sync-with-goose-fork",
+	-- "dccsillag/magma-nvim",
+	"parsiad/magma-nvim",
 	-- jupyter nvim
 	-- "yuzhegan/magma",
 	build = "UpdateRemotePlugins",
@@ -26,6 +37,8 @@ return {
 		nnoremap <silent>       <leader>mo :MagmaShowOutput<CR>
 		let g:magma_automatically_open_output = v:false
 		let g:magma_image_provider = "ueberzug"
+		" https://gist.github.com/BlueDrink9/f40b3c816e5bcb349adcbc22eb753518
+		setlocal foldexpr=GetJupytextFold(v:lnum)
 		]])
 	end,
 
