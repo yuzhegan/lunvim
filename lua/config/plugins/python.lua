@@ -50,8 +50,8 @@ return {
 			nnoremap ,Q Go<escape>^i# %%<CR>
 			inoremap ,q <escape>Go<escape>^i# %%<CR>
 			let g:ipython_cell_prefer_external_copy = 1
-			"let g:ipython_cell_regex = 1
-			"let g:ipython_cell_tag = '# %%( [^[].*)?'
+			let g:ipython_cell_regex = 1
+			let g:ipython_cell_tag = '# %%( [^[].*)?'
 
 
 			source ~/.config/nvim/after/ftplugin/python.vim
