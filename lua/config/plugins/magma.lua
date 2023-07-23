@@ -23,7 +23,7 @@ return {
 		vim.g.magma_image_provider = "ueberzug"
 		vim.g['magma_automatically_open_output'] = false
 		vim.g.magma_copy_output = false
-		vim.keymap.set('n', '<leader>rr', '/# %%<CR>:normal V n k<CR>:<C-u>MagmaEvaluateVisual<CR>:nohlsearch<CR>')
+		vim.keymap.set('n', '<leader>rr', ':normal V<CR>/# %%<CR>:<C-u>MagmaEvaluateVisual<CR>:nohlsearch<CR>:normal n<CR>')
 		-- function runcell()
 		-- 	vim.cmd(':V')
 		-- 	vim.cmd(':python3 ipython_cell.jump_next_cell()')
