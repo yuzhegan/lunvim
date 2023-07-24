@@ -63,7 +63,7 @@ nnoremap \c :IPythonCellExecuteCell<CR>
 
 " map <Leader>j to execute the current cell and jump to the next cell
 "nnoremap \C :IPythonCellExecuteCellJump<CR>
-nnoremap n :IPythonCellExecuteCellJump<CR>
+nnoremap \n :IPythonCellExecuteCellJump<CR>
 
 " map <Leader>C to execute the current cell and jump to the next cell
 "nnoremap \j :IPythonCellExecuteCellAllabove<CR>
