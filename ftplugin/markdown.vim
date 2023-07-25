@@ -95,6 +95,7 @@ autocmd Filetype markdown inoremap <buffer> ,u <Esc><S-v>c<Esc>i@startuml<Space>
 
 
 autocmd Filetype vimwiki inoremap <buffer> ,f <Esc>/<++><CR>:nohlsearch<CR>"_c4l
+autocmd Filetype vimwiki inoremap <buffer> ,t <Esc>o- [ ] <++><Esc>5hi
 autocmd Filetype vimwiki inoremap <buffer> ,w <Esc>/ <++><CR>:nohlsearch<CR>"_c5l<CR>
 autocmd Filetype vimwiki inoremap <buffer> ,n ---<Enter><Enter>
 autocmd Filetype vimwiki inoremap <buffer> ,b **** <++><Esc>F*hi
