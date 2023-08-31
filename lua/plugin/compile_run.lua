@@ -8,6 +8,10 @@ local compileRun = function()
 		vim.cmd(":MarkdownPreview")
 	elseif ft == "vimwiki" then
 		vim.cmd(":MarkdownPreview")
+	elseif ft == "javascript" then
+		vim.cmd("set splitbelow")
+		vim.cmd("sp")
+		vim.cmd("term node %")
 	elseif ft == "python" then
 		vim.cmd("set splitbelow")
 		vim.cmd("sp")
