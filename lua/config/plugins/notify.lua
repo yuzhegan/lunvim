@@ -5,12 +5,12 @@ return {
 		vim.notify = notify
 		notify.setup({
 			background_colour = "NotifyBackground",
-			fps = 30,
+			fps = 20,
 			level = 2,
-			minimum_width = 50,
+			minimum_width = 30,
 			render = "compact",
 			stages = "fade",
-			timeout = 5000,
+			timeout = 2000,
 			top_down = true
 
 		})

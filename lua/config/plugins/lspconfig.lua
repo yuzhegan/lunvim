@@ -135,7 +135,7 @@ M.config = {
 				json = true,
 				go = true,
 				lua = true,
-				python = true,
+				-- python = true,
 			}
 
 			vim.api.nvim_create_autocmd("BufWritePre", {

@@ -63,7 +63,7 @@ nnoremap \c :IPythonCellExecuteCell<CR>
 
 " map <Leader>j to execute the current cell and jump to the next cell
 "nnoremap \C :IPythonCellExecuteCellJump<CR>
-nnoremap n :IPythonCellExecuteCellJump<CR>
+nnoremap \n :IPythonCellExecuteCellJump<CR>
 
 " map <Leader>C to execute the current cell and jump to the next cell
 "nnoremap \j :IPythonCellExecuteCellAllabove<CR>
@@ -101,5 +101,3 @@ nmap <F10> :IPythonCellInsertBelow<CR>a
 " also make <F9> and <F10> work in insert mode
 imap <F9> <C-o>:IPythonCellInsertAbove<CR>
 imap <F10> <C-o>:IPythonCellInsertBelow<CR>
-
-
