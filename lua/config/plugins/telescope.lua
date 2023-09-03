@@ -66,8 +66,8 @@ M.config = {
 							["<C-w>"] = "which_key",
 							["<C-k>"] = "move_selection_previous",
 							["<C-h>"] = "move_selection_next",
-							["<C-l>"] = "preview_scrolling_up",
-							["<C-y>"] = "preview_scrolling_down",
+							["<C-k>"] = "preview_scrolling_up",
+							["<C-j>"] = "preview_scrolling_down",
 							["<esc>"] = "close",
 						}
 					},

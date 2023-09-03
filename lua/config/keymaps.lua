@@ -21,9 +21,9 @@ local nmappings = {
 	{ from = "<C-E>",         to = "5<C-e>",                                                              mode = mode_nv },
 
 	-- -- Actions
-	-- { from = "l",             to = "u" },
 	-- { from = "k",             to = "i",                                                                   mode = mode_nv },
 	-- { from = "K",             to = "I",                                                                   mode = mode_nv },
+	-- { from = "l",             to = "u" },
 
 	-- Useful actions
 	{ from = ",.",            to = "%",                                                                   mode = mode_nv },
@@ -31,6 +31,9 @@ local nmappings = {
 	{ from = "\\v",           to = "v$h", },
 	{ from = "<c-a>",         to = "<ESC>A",                                                              mode = mode_i },
 	{ from = ".k",            to = "<++>",                                                                mode = mode_i },
+	{ from = "<c-b>",         to = "zz",                                                                  mode = mode_nv },
+	{ from = "<c-b>",         to = "<ESC> zza",                                                           mode = mode_i },
+
 
 	-- Window & splits
 	{ from = "<leader>w",     to = "<C-w>w", },

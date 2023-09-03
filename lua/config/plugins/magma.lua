@@ -2,7 +2,8 @@
 
 return {
 	-- jupyter nvim
-	"dccsillag/magma-nvim",
+	-- "dccsillag/magma-nvim",
+	"yuzhegan/magma-nvim",
 	build = ":UpdateRemotePlugins",
 	config = function()
 		vim.cmd([[nnoremap <silent> <leader>mk :MagmaInit Python3<CR>
@@ -23,7 +24,7 @@ return {
 		vim.g.magma_image_provider = "ueberzug"
 		vim.g['magma_automatically_open_output'] = false
 		vim.g.magma_copy_output = false
-		vim.keymap.set('n', '<leader>rr', ':normal V<CR>/# %%<CR>:<C-u>MagmaEvaluateVisual<CR>:nohlsearch<CR>:normal n<CR>')
+		vim.keymap.set('n', '<leader>rr', ':normal V<CR>/# %%<CR>:<C-u>MagmaEvaluateVisual<CR>:normal n<CR>:nohlsearch<CR>')
 		-- function runcell()
 		-- 	vim.cmd(':V')
 		-- 	vim.cmd(':python3 ipython_cell.jump_next_cell()')

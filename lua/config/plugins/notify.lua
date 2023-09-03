@@ -10,7 +10,7 @@ return {
 			minimum_width = 30,
 			render = "compact",
 			stages = "fade",
-			timeout = 2000,
+			timeout = 200,
 			top_down = true
 
 		})
