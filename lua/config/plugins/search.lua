@@ -33,7 +33,7 @@ return {
 	{
 		"nvim-pack/nvim-spectre",
 		config = function()
-			vim.keymap.set('n', '<leader>f', '<cmd>lua require("spectre").open()<CR>', {
+			vim.keymap.set('n', '<leader>i', '<cmd>lua require("spectre").open()<CR>', {
 				desc = "Open Spectre"
 			})
 			vim.keymap.set('n', '<leader>sw', '<cmd>lua require("spectre").open_visual({select_word=true})<CR>', {

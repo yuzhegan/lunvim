@@ -1,3 +1,4 @@
 return {
-	"gboncoffee/lf.vim",
+	-- "gboncoffee/lf.vim",
+	"yuzhegan/lf.vim",
 }
