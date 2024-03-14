@@ -13,7 +13,7 @@
 -- selcet the magma cell
 return {
 	-- jupyter nvim
-	"dccsillag/magma-nvim",
+	"yuzhegan/magma-nvim",
 	build = ":UpdateRemotePlugins",
 	config = function()
 		vim.cmd([[nnoremap <silent> <leader>mk :MagmaInit Python3<CR>

@@ -17,8 +17,8 @@ local nmappings = {
 	{ from = "L",             to = "$",                                                                   mode = mode_nv },
 	{ from = "gk",            to = "gk",                                                                  mode = mode_nv },
 	{ from = "gj",            to = "gj",                                                                  mode = mode_nv },
-	{ from = "<C-U>",         to = "5<C-y>",                                                              mode = mode_nv },
 	{ from = "<C-E>",         to = "5<C-e>",                                                              mode = mode_nv },
+	{ from = "<C-U>",         to = "5<C-y>",                                                              mode = mode_nv },
 
 	-- -- Actions
 	-- { from = "l",             to = "u" },
@@ -31,6 +31,8 @@ local nmappings = {
 	{ from = "\\v",           to = "v$h", },
 	{ from = "<c-a>",         to = "<ESC>A",                                                              mode = mode_i },
 	{ from = ".k",            to = "<++>",                                                                mode = mode_i },
+	{ from = "<c-b>",         to = "zz",                                                                  mode = mode_nv },
+	{ from = "<c-b>",         to = "<ESC> zzi",                                                           mode = mode_i },
 
 	-- Window & splits
 	{ from = "<leader>w",     to = "<C-w>w", },
@@ -76,7 +78,7 @@ local nmappings = {
 	{ from = "<leader><esc>", to = "<nop>" },
 
 	-- Joshuto
-	{ from = "R",             to = ":Lf<CR>" },
+	{ from = "R",             to = ":Yazi<CR>" },
 }
 
 for _, mapping in ipairs(nmappings) do

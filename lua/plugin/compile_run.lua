@@ -12,6 +12,10 @@ local compileRun = function()
 		vim.cmd("set splitbelow")
 		vim.cmd("sp")
 		vim.cmd("term python %")
+	elseif ft == 'javascript' then
+		vim.cmd("set splitbelow")
+		vim.cmd("sp")
+		vim.cmd("term node %")
 	end
 end
 
