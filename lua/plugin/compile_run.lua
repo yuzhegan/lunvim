@@ -17,7 +17,7 @@ local compileRun = function()
 	elseif ft == "python" then
 		vim.cmd("set splitbelow")
 		vim.cmd("sp")
-		vim.cmd("term python %")
+		vim.cmd("term python3 %")
 	end
 end
 

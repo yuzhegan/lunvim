@@ -30,7 +30,7 @@
 autocmd BufEnter * silent! lcd %:p:h
 
 "" map to start ipython in current file directory
-nnoremap \E :execute 'SlimeSend1 cd 'fnameescape(expand('%:p:h'))<CR>:execute 'SlimeSend1 c'<CR>:SlimeSend1 ipython --matplotlib<CR>
+nnoremap \E :execute 'SlimeSend1 cd 'fnameescape(expand('%:p:h'))<CR>:execute 'SlimeSend1 c'<CR>:SlimeSend1 ipython3 --matplotlib<CR>
 
 " always use tmux
 let g:slime_target = 'tmux'
