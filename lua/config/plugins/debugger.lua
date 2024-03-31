@@ -12,6 +12,7 @@ return {
 				end
 			},
 			"theHamsta/nvim-dap-virtual-text",
+			"nvim-neotest/nvim-nio",
 			"rcarriga/nvim-dap-ui",
 			"nvim-dap-virtual-text",
 			"nvim-telescope/telescope-dap.nvim",

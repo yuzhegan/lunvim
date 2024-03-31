@@ -6,6 +6,10 @@ local compileRun = function()
 		vim.cmd(":FlutterRun -d " .. vim.g.flutter_default_device .. " " .. vim.g.flutter_run_args .. "<CR>")
 	elseif ft == "markdown" then
 		vim.cmd(":MarkdownPreview")
+	elseif ft == "go" then
+		vim.cmd("set splitbelow")
+		vim.cmd("sp")
+		vim.cmd("term go run %")
 	elseif ft == "vimwiki" then
 		vim.cmd(":MarkdownPreview")
 	elseif ft == "html" then
