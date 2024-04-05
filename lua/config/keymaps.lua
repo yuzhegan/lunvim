@@ -79,7 +79,7 @@ local nmappings = {
 	{ from = "<leader><esc>", to = "<nop>" },
 
 	-- Joshuto
-	{ from = "R",             to = ":Lf<CR>" },
+	{ from = "R",             to = ":Yazi<CR>" },
 }
 
 for _, mapping in ipairs(nmappings) do
