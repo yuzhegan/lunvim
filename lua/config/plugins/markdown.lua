@@ -15,6 +15,7 @@ vim.cmd(
 	[[
 function OpenMarkdownPreview (url)
 		execute "silent ! edge --new-window " . a:url
+		" execute "silent ! /mnt/c/Program\ Files\ \(x86\)/Microsoft/Edge/Application/msedge.exe --new-window " . a:url
 endfunction
 ]]
 )
@@ -22,8 +23,9 @@ endfunction
 return {
 	{
 		"iamcco/markdown-preview.nvim",
+    cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
 		ft = { "markdown", "vimwiki" },
-		build = "cd app && yarn install",
+		build = function() vim.fn["mkdp#util#install"]() end,
 
 		config = function()
 			vim.g.mkdp_auto_start = 0

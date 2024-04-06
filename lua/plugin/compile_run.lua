@@ -16,6 +16,10 @@ local compileRun = function()
 		vim.cmd("set splitbelow")
 		vim.cmd("sp")
 		vim.cmd("term node %")
+	elseif ft == "lua" then
+		vim.cmd("set splitbelow")
+		vim.cmd("sp")
+		vim.cmd("term lua %")
 	end
 end
 
