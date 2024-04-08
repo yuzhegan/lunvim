@@ -102,3 +102,34 @@ if not vim.loop.fs_stat(current_config_path) then
 	end
 end
 require("config.machine_specific")
+
+
+--python error buffer
+-- 定义一个函数用于预览缓冲区中的错误，这段应该已经定义在你的配置中
+local function preview_buferror()
+	local line_str = vim.api.nvim_get_current_line()
+	local file, line = line_str:match('File "(.-)", line (%d+)')
+	vim.cmd(":wincmd k")
+	vim.cmd("e " .. file)
+	vim.api.nvim_win_set_cursor(0, { tonumber(line), 0 })
+	vim.cmd(":wincmd j")
+end
+
+-- 注册全局函数以便在autocmd中调用
+_G.preview_buferror = preview_buferror
+
+-- 创建一个自动命令组
+local python_terminal_group = vim.api.nvim_create_augroup("PythonTerminal", { clear = true })
+
+-- 创建一个自动命令，当打开Python终端时设置快捷键'p'用于预览错误
+vim.api.nvim_create_autocmd(
+	"TermOpen",
+	{
+		pattern = "term://*python*",
+		callback = function()
+			-- 注意，这里去除了 buffer 关键字，直接传递参数
+			vim.api.nvim_buf_set_keymap(0, 'n', 'p', ':lua _G.preview_buferror()<CR>', { noremap = true, silent = true })
+		end,
+		group = python_terminal_group
+	}
+)
